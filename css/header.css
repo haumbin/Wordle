@@ -1,0 +1,32 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dfdfdf;
+  padding-top: 12px;
+  padding-bottom: 15px;
+  flex-direction: row;
+}
+
+.header__sector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header__icons {
+  flex-direction: row;
+}
+.header__icon {
+  height: 28px;
+  width: 28px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+#titleName {
+  font-weight: bold;
+  font-size: 40px;
+  padding-left: 100px;
+  cursor: pointer;
+}

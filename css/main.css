@@ -1,0 +1,31 @@
+@import "reset.css";
+@import "header.css";
+@import "footer.css";
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.board-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.board-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #d3d6da;
+  height: 60px;
+  width: 60px;
+}
+
+#time {
+  font-size: 30px;
+  font-weight: bold;
+}

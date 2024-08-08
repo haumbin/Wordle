@@ -1,0 +1,42 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.keyboard-colum {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 45px;
+  background-color: #d3d6da;
+  border-radius: 10px;
+  /* margin: 5px; */
+}
+
+.key img {
+  height: 40px;
+  width: 50px;
+}
+.big-key {
+  width: 75px;
+}
+
+/*  1. 3개의 로우를 flex-direction: column;을 이용해 늘어뜨릴 것 
+    2. 내부도 flex를 이용해서 gap하나씩 준다.
+    3. enter와 백스페이스만 박스 사이즈가 다르니 별도의 클래스로 빼서 작업*/
