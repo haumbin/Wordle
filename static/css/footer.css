@@ -24,7 +24,7 @@ footer {
   align-items: center;
   height: 60px;
   width: 45px;
-  background-color: #d3d6da;
+  background: #d3d6da;
   border-radius: 10px;
   /* margin: 5px; */
 }
