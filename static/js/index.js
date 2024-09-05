@@ -9,8 +9,18 @@ function appStart() {
     const div = document.createElement("div"); // 디브태그 속성을 생성해서 변수에 담는다.
     div.innerText = "게임이 종료됐습니다."; // 변수에 담긴 태그에 텍스트를 삽입한다.
     div.style =
-      "display:flex; justify-content:center; align-items:center; position:absolute; top:35vh; left:40vw; background-color:white; width:200px; height:100px;"; // 변수에 담긴 태그에 스타일 적용한다.
+      "display:flex; justify-content:center; align-items:center; position:absolute; top:35vh; left:40vw; background-color:white; width:200px; height:100px; animation:yes 2s ease-in-out;"; // 변수에 담긴 태그에 스타일 적용한다.
     document.body.appendChild(div); // 문서의 바디 태그부분에 자식을 추가한다. > 변수에 담은 태그를 바디에 삽입한다.
+  };
+  const wrong = () => {
+    const div = document.createElement("div"); // 디브태그 속성을 생성해서 변수에 담는다.
+    div.classList.add("animated-play");
+    div.innerText = "틀렸어요"; // 변수에 담긴 태그에 텍스트를 삽입한다.
+
+    document.body.appendChild(div); // 문서의 바디 태그부분에 자식을 추가한다. > 변수에 담은 태그를 바디에 삽입한다.
+    setTimeout(() => {
+      document.body.removeChild(div);
+    }, 2000);
   };
   const nextLine = () => {
     if (attempts === 6) return gameOver();
@@ -48,21 +58,33 @@ function appStart() {
       if (입력한_글자 === 정답_글자) {
         맞은_갯수 += 1;
         block.style.background = "#6AAA64";
-        if (keyElement) keyElement.style.background = "#6AAA64";
+        if (keyElement) {
+          keyElement.style.background = "#6AAA64";
+          keyElement.dataset.color = "green"; // 데이터셋에 색상을 저장
+        }
       } else if (정답.includes(입력한_글자)) {
         block.style.background = "#c9b458";
-        if (keyElement && keyElement.style.background !== "#6AAA64") {
-          // 키가 이미 초록색이 아니라면 노란색으로 변경
+        if (keyElement && keyElement.dataset.color !== "green") {
+          // if (keyElement && keyElement.style.background !== "#6AAA64") {
           keyElement.style.background = "#c9b458";
+          keyElement.dataset.color = "yellow"; // 노란색을 데이터셋에 저장
         }
       } else {
         block.style.background = "#787c7e";
+        if (keyElement && !keyElement.dataset.color) {
+          // 데이터셋에 색상이 없을 경우에만 회색으로 변경
+          keyElement.style.background = "#787c7e";
+        }
       }
       block.style.color = "white";
     }
 
     if (맞은_갯수 === 5) gameOver();
-    else nextLine();
+    else {
+      wrong();
+
+      nextLine();
+    }
   };
 
   const handleBackspace = () => {

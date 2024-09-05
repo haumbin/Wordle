@@ -29,3 +29,52 @@ main {
   font-size: 30px;
   font-weight: bold;
 }
+
+@keyframes yes {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes nope {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animated-play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 35vh;
+  left: 40vw;
+  background-color: red;
+  width: 200px;
+  height: 100px;
+  animation: nope 2s ease-in-out;
+}
